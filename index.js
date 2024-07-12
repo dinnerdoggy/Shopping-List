@@ -14,12 +14,23 @@ const addButtonEl = document.getElementById("add-button")
 const shoppingListEl = document.getElementById("shopping-list")
 
 addButtonEl.addEventListener("click", function() {
-    let inputValue = inputFieldEl.value
-    
-    push(shoppingListInDB, inputValue)
-    
-    clearInputFieldEl()
-})
+    submitInput();
+});
+
+inputFieldEl.addEventListener("keypress", function(event) {
+    if (event.key === 'Enter') {
+        event.preventDefault();  // Prevent the default form submission behavior
+        submitInput();
+    }
+});
+
+function submitInput() {
+    let inputValue = inputFieldEl.value;
+    if (inputValue) {
+        push(shoppingListInDB, inputValue);
+        clearInputFieldEl();
+    }
+}
 
 onValue(shoppingListInDB, function(snapshot) {
     if (snapshot.exists()) {
