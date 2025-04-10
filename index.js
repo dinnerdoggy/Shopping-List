@@ -2,7 +2,7 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 const appSettings = {
-    databaseURL: "https://realtime-database-19993-default-rtdb.firebaseio.com/"
+    databaseURL: "https://vocab-you-lary-d91df-default-rtdb.firebaseio.com/" // changed database
 }
 
 const app = initializeApp(appSettings)
